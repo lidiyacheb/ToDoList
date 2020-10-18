@@ -7,14 +7,89 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="d-flex justify-content-center align-items-center">
     <!--Container-->
     <div class="container">
-        hello!!!
         <!--Tabs-->
-        <!--Todo Lists Section-->
-        <!--Form Section-->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link nav-todo active" data-toggle="tab" href="#monday" role="tab" aria-controls="home">Mon.</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-todo" data-toggle="tab" href="#tuesday" role="tab" aria-controls="profile">Tue.</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-todo" data-toggle="tab" href="#wednesday" role="tab" aria-controls="messages">Wed.</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-todo" data-toggle="tab" href="#thursday" role="tab" aria-controls="settings">Thu.</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-todo" data-toggle="tab" href="#friday" role="tab" aria-controls="home">Fri.</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-todo" data-toggle="tab" href="#saturday" role="tab" aria-controls="profile">Sat.</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-todo" data-toggle="tab" href="#sunday" role="tab" aria-controls="messages">Sun.</a>
+              </li>
+          </ul>
+          <!--Todo Lists Section-->
+          <div class="tab-content">
+            <div class="tab-pane active" id="monday" role="tabpanel">
+                <div class="row wrapper">
+                    <div class="col-8">
+                        <div class="todo-header">
+                            <div class="row d-flex justify-content-center align-items-center">
+                                <div class="col-8">
+                                    <h1 class="text-white poller">My ToDO List</h1>
+                                </div>
+                                <div class="col-4">
+                                    <select name="todo" id="todo-select">
+                                        <option value="dog">ALL</option>
+                                        <option value="cat">Complete</option>
+                                        <option value="hamster">Incomplete</option>
+                                    </select>
+                                    
+                                </div>
+                              </div>
+                        </div>
+                </div>
+                <!--Form Section Start-->
+                    <div class="col-4 todo-form">
+                        <h1 class="text-white poller">Create Task</h1>
+                        <form>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Title</label>
+                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter task">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Running time</label>
+                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <p>Task for today: <span>3</span></p>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Add Task</button>
+                            <button type="submit" class="btn btn-primary">Cancel</button>
+                          </form>
+                    </div>
+                    <!--Form Section End-->
+                  </div>
+            </div>
+            <div class="tab-pane" id="tuesday" role="tabpanel">..2.</div>
+            <div class="tab-pane" id="wednesday" role="tabpanel">.3..</div>
+            <div class="tab-pane" id="thursday" role="tabpanel">.4..</div>
+            <div class="tab-pane" id="friday" role="tabpanel">..2.</div>
+            <div class="tab-pane" id="saturday" role="tabpanel">.3..</div>
+            <div class="tab-pane" id="sunday" role="tabpanel">.4..</div>
+          </div>
       </div>
 </body>
 <script src="main.js"></script>
