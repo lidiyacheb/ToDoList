@@ -1,6 +1,100 @@
+@font-face {
+    font-family: 'PollerOne';
+    src: url('./fonts/PollerOne-Regular.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Niconne';
+    src: url('./fonts/Niconne-Regular.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+
 html {
     margin: 0;
     padding: 0;
     font-size: 100%;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-image: url('./images/bg-img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/*Styles for Tabs*/
+.nav.nav-tabs {
+    float: left;
+    display: block;
+    margin-right: 20px;
+    border-bottom:0;
+    border-right: 1px solid #ddd;
+    padding-right: 15px;
+}
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    background-color: #2B424B;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.nav-tabs .nav-link.active {
+    color: #495057;
+    background-color:#3E9EC5;
+    border-color: transparent !important;
+}
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 0rem!important;
+    border-top-right-radius: 0rem!important;
+}
+.tab-content>.active {
+    display: block;
+    background-color: rgba(46, 139, 182, 0.7);
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.48), inset 0px 0px 73px rgba(0, 0, 0, 0.71);
+    min-height: 512px;
+}
+.nav.nav-tabs {
+    float: left;
+    display: block;
+    margin-right: 20px;
+    border-bottom: 0;
+    border-right: 1px solid transparent;
+    padding-right: 15px;
+}
+
+.nav-todo {
+    padding: 1.5rem 1rem;
+}
+
+.todo-form {
+    background-color: #2B424B;
+    height: 512px;
+    color:  #18a9e2;
+    padding-top: 0.5rem;
+}
+
+.poller {
+    font-family: 'PollerOne';
+    font-size: 2.5rem;
+}
+
+.todo-header {
+    padding-top: 0.5rem;
+}
+
+@media(max-width: 775px) {
+    .poller {
+        font-size: 1.7rem;
+    }
+    .todo-form {
+        display:none;
+    }
 }
