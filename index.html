@@ -8,9 +8,6 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 </head>
 <body class="d-flex justify-content-center align-items-center">
     <!--Container-->
@@ -55,8 +52,10 @@
                                         <option value="cat">Complete</option>
                                         <option value="hamster">Incomplete</option>
                                     </select>
-
                                 </div>
+                              </div>
+                              <!--Todo Items Start-->
+                              <div class="todo-items">
                               </div>
                         </div>
                 </div>
@@ -65,6 +64,7 @@
                         <h1 class="text-white poller">Create Task</h1>
                         <form>
                             <div class="form-group">
+                              <!--Todo Input-->
                               <label for="input">Title</label>
                               <input type="text" class="form-control" id="todoinput" aria-describedby="info" placeholder="Enter task">
                             </div>
@@ -76,8 +76,8 @@
                                 <p>Task for today: <span>3</span></p>
                             </div>
 
-                            <button type="submit" class="btn btn-primary" id="addTask">Add Task</button>
-                            <button type="submit" class="btn btn-primary" id="runTime">Cancel</button>
+                            <button type="submit" class="btn btn-primary button-add">Add Task</button>
+                            <button type="submit" class="btn btn-primary button-cancel">Cancel</button>
                           </form>
                     </div>
                     <!--Form Section End-->
@@ -93,4 +93,7 @@
       </div>
 </body>
 <script src="main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 </html>
