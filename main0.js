@@ -9,7 +9,7 @@ const toDoList = document.querySelector(".toDoList");
 
 addTaskButton.addEventListener('click', addToDo);
 toDoList.addEventListener('click', deleteCheck);
-
+toDoList.addEventListener('click',editButton)
 
 //functions
 function addToDo(event) {
@@ -23,20 +23,32 @@ function addToDo(event) {
   newToDo.classList.add('toDo-item');
   toDoDiv.appendChild(newToDo);
 
-  saveLocalToDos(toDoInput.value);
+
 
   // check button
   const completedButton = document.createElement('button');
-  completedButton.innerHTML = '<i class="fa fa-check">';
+  completedButton.innerHTML = '<i class="fa fa-check-circle-o fa-2x" aria-hidden="false"></i>'
   completedButton.classList.add("check-btn");
   toDoDiv.appendChild(completedButton);
+  //Edit button:
+  //Edit button:
+  const editButton = document.createElement("button");
+  editButton.innerHTML = '<i class="fa fa-pencil fa-2x" aria-hidden="false"></i>'
+  editButton.classList.add('edit-btn');
+  toDoDiv.appendChild(editButton);
 
 
   // trash button
   const trashButton = document.createElement('button');
-  trashButton.innerHTML = '<i class="fa fa-trash"></i>';
+  trashButton.innerHTML = '<i class="fa fa-trash fa-2x" aria-hidden="false"></i>';
   trashButton.classList.add("trash-btn");
   toDoDiv.appendChild(trashButton);
+
+
+
+
+
+
   //append
   toDoList.appendChild(toDoDiv);
   toDoInput.value = '';
@@ -54,21 +66,4 @@ function deleteCheck(e) {
     const toDo = item.parentElement;
     todo.classList.toggle('completed');
   }
-
-
-
-}
-
-function saveLocalToDos(toDo) {
-  let todos;
-  if (localStorage.getItem('toDos') === null) {
-    toDos = [];
-
-  } else {
-    toDos = JSON.parse(localStorage.getItem('toDos'));
-  }
-  toDos.push(toDo);
-  localStorage.setItem("toDoInputos", JSON.stringify(toDos))
-
-
 }

@@ -1,140 +1,162 @@
 @font-face {
-    font-family: 'PollerOne';
-    src: url('./fonts/PollerOne-Regular.ttf');
-    font-style: normal;
-    font-weight: normal;
+  font-family: 'PollerOne';
+  src: url('./fonts/PollerOne-Regular.ttf');
+  font-style: normal;
+  font-weight: normal;
 }
 
 @font-face {
-    font-family: 'Niconne';
-    src: url('./fonts/Niconne-Regular.ttf');
-    font-style: normal;
-    font-weight: normal;
+  font-family: 'Niconne';
+  src: url('./fonts/Niconne-Regular.ttf');
+  font-style: normal;
+  font-weight: normal;
 }
 
 html {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    height: 100vh;
-    background-image: url('./images/bg-img.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-
+  height: 100vh;
+  background-image: url('./images/bg-img.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /*Styles for Tabs*/
 .nav.nav-tabs {
-    float: left;
-    display: block;
-    margin-right: 20px;
-    border-bottom:0;
-    border-right: 1px solid #ddd;
-    padding-right: 15px;
+  float: left;
+  display: block;
+  margin-right: 20px;
+  border-bottom: 0;
+  border-right: 1px solid #ddd;
+  padding-right: 15px;
 }
+
 .nav-tabs .nav-link {
-    border: 1px solid transparent;
-    border-top-left-radius: .25rem;
-    border-top-right-radius: .25rem;
-    background-color: #2B424B;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+  border: 1px solid transparent;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  background-color: #2B424B;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
 }
 
 .nav-tabs .nav-link.active {
-    color: #495057;
-    background-color:#3E9EC5;
-    border-color: transparent !important;
+  color: #495057;
+  background-color: #3E9EC5;
+  border-color: transparent !important;
 }
+
 .nav-tabs .nav-link {
-    border: 1px solid transparent;
-    border-top-left-radius: 0rem!important;
-    border-top-right-radius: 0rem!important;
+  border: 1px solid transparent;
+  border-top-left-radius: 0rem !important;
+  border-top-right-radius: 0rem !important;
 }
+
 .tab-content>.active {
-    display: block;
-    background-color: rgba(46, 139, 182, 0.7);
-    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.48), inset 0px 0px 73px rgba(0, 0, 0, 0.71);
-    min-height: 512px;
+  display: block;
+  background-color: rgba(46, 139, 182, 0.7);
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.48), inset 0px 0px 73px rgba(0, 0, 0, 0.71);
+  min-height: 512px;
 }
+
 .nav.nav-tabs {
-    float: left;
-    display: block;
-    margin-right: 20px;
-    border-bottom: 0;
-    border-right: 1px solid transparent;
-    padding-right: 15px;
+  float: left;
+  display: block;
+  margin-right: 20px;
+  border-bottom: 0;
+  border-right: 1px solid transparent;
+  padding-right: 15px;
 }
 
 .nav-todo {
-    padding: 1.5rem 1rem;
+  padding: 1.5rem 1rem;
 }
 
 .todo-form {
-    background-color: #2B424B;
-    height: 512px;
-    color:  #18a9e2;
-    padding-top: 0.5rem;
+  background-color: #2B424B;
+  height: 512px;
+  color: #18a9e2;
+  padding-top: 0.5rem;
 }
 
 .poller {
-    font-family: 'PollerOne';
-    font-size: 2.5rem;
+  font-family: 'PollerOne';
+  font-size: 2.5rem;
 }
 
 .todo-header {
-    padding-top: 0.5rem;
+  padding-top: 0.5rem;
 }
 
 @media(max-width: 775px) {
-    .poller {
-        font-size: 1.7rem;
-    }
-    .todo-form {
-        display:none;
-    }
+  .poller {
+    font-size: 1.7rem;
+  }
+
+  .todo-form {
+    display: none;
+  }
 }
-.trash-btn {
-  background: red;
-  color: white;
-  border:none;
-  padding 1rem;
+
+.trash-btn, .check-btn, .edit-btn {
+  background-color: rgb(212, 76, 76);
+  border: none;
+  color: black;
+  padding:.8rem;
   cursor: pointer;
-  font-size: 1rem;
-margin-right: 0;
+  font-size: .75rem;
+
 
 }
+
 .check-btn {
-  background: green;
-  color: white;
-  border:none;
-  padding 1rem;
-  cursor: pointer;
+  background-color: rgb(96, 207, 124);
+
+
+}
+
+.edit-btn{
+background-color: rgb(62, 35, 211);
+
+}
+
+
+
+
+
+
+
+.toDoList {
+  list-style: none;
+padding: inherit;
+  min-width: 30%;
   font-size: 1rem;
-
-
-}
-.todo-item{
-  padding:0rem 0.5rem;
-background: white;
+  color: black;
+  background: orange;
+  flex:1;
 
 }
-.toDoList{
-list-style:none;
-margin: 0.5rem;
-min-width: 30%;
-font-size: 1rem;
-color:black;
-background: white;
 
+.toDo li {
+margin:0.5rem
+  background-color:white;
+font-size: 1.5rem;
+color: black;
+display:flex;
+justify-content: space-between;
+align-items: center;
 }
-.toDo li{
 
-}
-.completed{
+.completed {
   text-decoration: line-through;
+  opacity: 0.5;
+  color: red;
+
 }
+
+.toDo-container {}
