@@ -43,6 +43,7 @@ body {
     background-color: #2B424B;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
+    color: white;
 }
 
 .nav-tabs .nav-link.active {
@@ -108,6 +109,9 @@ body {
 
 .list-item {
     padding-left: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: math;
 }
 
 .delBtn, .checkBtn, .editBtn {
@@ -117,6 +121,7 @@ body {
     padding:.8rem;
     cursor: pointer;
     font-size: .75rem;
+    
 }
 
 .checkBtn {
@@ -133,6 +138,26 @@ body {
     color: red;
 }
 
+.button-add {
+    margin-top: 200px;
+}
+
+.button-cancel {
+    margin-top: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.today-task {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.task-count{
+    color: #e02c44;
+}
+
 .fa-check-circle-o, .fa-pencil, .fa-trash {
     pointer-events: none;
 }
@@ -144,5 +169,17 @@ body {
     }
     .todo-form {
         display:none;
+    }
+}
+
+@media(max-width: 1199px) {
+    .button-add {
+        margin-top: 150px;
+    }
+    
+    .button-cancel {
+        margin-top: 20px;
+        width: 100%;
+        margin-top: 20px;
     }
 }

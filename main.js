@@ -3,6 +3,9 @@ class Task {
     this.title = title;
     }
     }
+
+    let total = 0;
+    document.querySelector(".task-count").innerHTML = total;
     
 class ItemList {
     constructor (selector) {
@@ -21,6 +24,9 @@ class ItemList {
         var index = this.tasks.indexOf(categoryToDelete);
         this.tasks.splice(index, 1);
         this.render();
+        total--;
+        console.log(total);
+        document.querySelector(".task-count").innerHTML = total;
         }
 
     //delete:
@@ -31,7 +37,8 @@ class ItemList {
             el.parentElement.classList.toggle('completed');
         }
     }
-    
+
+
     // show Item it as HTML:
     render() {
     this.target.innerHTML = "";
@@ -44,7 +51,8 @@ class ItemList {
           ul.appendChild(li);
           this.target.appendChild(ul);
 
-
+    
+    
 
           //Check Button:
           const checkButton = document.createElement("button");
@@ -70,14 +78,26 @@ class ItemList {
             const input = document.querySelector("#todoinput");
             const button = document.querySelector(".button-add");
             const list = document.querySelector(".todo-items");
+            const dropdown = document.querySelector("#todo-select");
+            const cancel = document.querySelector(".button-cancel");
+            const form = document.querySelector(".form-group");
             
             //add item on button click
             button.addEventListener('click', (e)=>{
                 e.preventDefault();
+
                 if(input.value) {
                     itemList.add(new Task(input.value));
-                    input.value = "";}
-            })
+                    total++;
+                    input.value = "";
+                }
+                else {
+                    alert('please fill the form!')
+                }
+                    console.log(total);
+                    document.querySelector(".task-count").innerHTML = total;
+            }
+            )
             
             //delete item on Delete button 
             list.addEventListener('click', (e)=>{
@@ -92,7 +112,38 @@ class ItemList {
             list.addEventListener('click', (e)=>{
                 itemList.check(e.target);
             })
+
+            cancel.addEventListener('click', (e)=>{
+                e.preventDefault();
+                if(input.value) {
+                    input.value = "";
+                }
+            });
             
-            
-            
-      
+            //dropdown:
+            dropdown.addEventListener('change', (e)=>{
+                const selectedTodo = list.childNodes;
+                console.log(selectedTodo)
+                selectedTodo.forEach((elem) => {
+                    switch (e.target.value) {
+                        case "all":
+                            elem.style.display = "flex";
+                            break;
+                        case "completed":
+                            if (elem.children.classList.contains("completed")) {
+                                elem.style.display = "flex";
+                              } else {
+                                elem.style.display = "none";
+                              }
+                              break;
+                            
+                        case "uncompleted":
+                                if (elem.children.classList.contains("completed")) {
+                                  elem.style.display = "none";
+                                } else {
+                                  elem.style.display = "flex";
+                                }
+                                break;
+                    }
+            })
+            })
