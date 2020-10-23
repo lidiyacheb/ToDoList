@@ -31,7 +31,8 @@ class ItemList {
             el.parentElement.classList.toggle('completed');
         }
     }
-    
+
+
     // show Item it as HTML:
     render() {
     this.target.innerHTML = "";
@@ -44,7 +45,8 @@ class ItemList {
           ul.appendChild(li);
           this.target.appendChild(ul);
 
-
+    
+    
 
           //Check Button:
           const checkButton = document.createElement("button");
@@ -70,6 +72,7 @@ class ItemList {
             const input = document.querySelector("#todoinput");
             const button = document.querySelector(".button-add");
             const list = document.querySelector(".todo-items");
+            const dropdown = document.querySelector("#todo-select");
             
             //add item on button click
             button.addEventListener('click', (e)=>{
@@ -93,6 +96,30 @@ class ItemList {
                 itemList.check(e.target);
             })
             
-            
-            
-      
+            //dropdown:
+            dropdown.addEventListener('change', (e)=>{
+                const selectedTodo = list.childNodes;
+                console.log(selectedTodo)
+                selectedTodo.forEach((elem) => {
+                    switch (e.target.value) {
+                        case "all":
+                            elem.style.display = "flex";
+                            break;
+                        case "completed":
+                            if (elem.children.classList.contains("completed")) {
+                                elem.style.display = "flex";
+                              } else {
+                                elem.style.display = "none";
+                              }
+                              break;
+                            
+                        case "uncompleted":
+                                if (elem.children.classList.contains("completed")) {
+                                  elem.style.display = "none";
+                                } else {
+                                  elem.style.display = "flex";
+                                }
+                                break;
+                    }
+            })
+            })
