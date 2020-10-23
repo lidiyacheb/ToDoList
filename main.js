@@ -3,6 +3,9 @@ class Task {
     this.title = title;
     }
     }
+
+    let total = 0;
+    document.querySelector(".task-count").innerHTML = total;
     
 class ItemList {
     constructor (selector) {
@@ -21,6 +24,9 @@ class ItemList {
         var index = this.tasks.indexOf(categoryToDelete);
         this.tasks.splice(index, 1);
         this.render();
+        total--;
+        console.log(total);
+        document.querySelector(".task-count").innerHTML = total;
         }
 
     //delete:
@@ -73,14 +79,25 @@ class ItemList {
             const button = document.querySelector(".button-add");
             const list = document.querySelector(".todo-items");
             const dropdown = document.querySelector("#todo-select");
+            const cancel = document.querySelector(".button-cancel");
+            const form = document.querySelector(".form-group");
             
             //add item on button click
             button.addEventListener('click', (e)=>{
                 e.preventDefault();
+
                 if(input.value) {
                     itemList.add(new Task(input.value));
-                    input.value = "";}
-            })
+                    total++;
+                    input.value = "";
+                }
+                else {
+                    alert('please fill the form!')
+                }
+                    console.log(total);
+                    document.querySelector(".task-count").innerHTML = total;
+            }
+            )
             
             //delete item on Delete button 
             list.addEventListener('click', (e)=>{
@@ -95,6 +112,13 @@ class ItemList {
             list.addEventListener('click', (e)=>{
                 itemList.check(e.target);
             })
+
+            cancel.addEventListener('click', (e)=>{
+                e.preventDefault();
+                if(input.value) {
+                    input.value = "";
+                }
+            });
             
             //dropdown:
             dropdown.addEventListener('change', (e)=>{
